@@ -14,31 +14,28 @@
       font-family: 'Urbanist', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f2f5; /* Light grey background */
+      background-color: white; /* Blank white page as requested */
       display: flex;
       flex-direction: column;
-      min-height: 100vh; /* Ensure page takes full viewport height */
       align-items: center; /* Center content horizontally */
-      justify-content: center; /* Center content vertically */
+      min-height: 100vh; /* Ensure page takes full viewport height */
       text-align: center; /* Center text globally */
+      box-sizing: border-box; /* Include padding in element's total width and height */
+      /* Removed padding-bottom here as the image is no longer fixed */
     }
 
-    /* Container for the main content */
-    .container {
-      max-width: 1000px;
-      width: 90%; /* Responsive width */
-      margin: 20px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      box-sizing: border-box; /* Include padding in width */
+    /* General content wrapper for consistent padding */
+    .content-wrapper {
+      width: 90%; /* Max 90% width of viewport */
+      max-width: 900px; /* Optional: cap max width on very large screens */
+      padding: 20px 0; /* Vertical padding */
+      box-sizing: border-box;
     }
 
     /* Logo styling */
     .logo {
       display: block;
-      margin: 0 auto 30px auto; /* Center logo with bottom margin */
+      margin: 30px auto; /* Add top and bottom margin, center horizontally */
       max-width: 250px; /* Max width for the logo */
       height: auto;
       border-radius: 12px;
@@ -48,15 +45,18 @@
     h1 {
       font-family: 'Urbanist', sans-serif;
       font-weight: 900; /* Extra bold */
-      font-size: 3rem; /* Large font size for impact */
+      font-size: clamp(2rem, 5vw, 3rem); /* Responsive font size */
       color: #333;
       margin-bottom: 20px;
       line-height: 1.2;
+      max-width: 800px; /* Constrain header width */
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Subheader/paragraph styling */
     p {
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive font size */
       color: #555;
       margin-bottom: 30px;
       line-height: 1.6;
@@ -65,18 +65,18 @@
       margin-right: auto;
     }
 
-    /* Full width image container */
+    /* Full width image container (now relative to content flow) */
     .full-width-image-container {
-      width: calc(100% + 40px); /* Extend beyond container padding */
-      margin: 0 -20px 30px -20px; /* Negative margin to achieve full width */
+      width: 100%;     /* Take full viewport width */
       overflow: hidden; /* Hide any overflow */
+      margin-top: 30px; /* Add some space above the image */
+      margin-bottom: 0; /* Ensure no margin at the bottom of the image itself */
     }
 
     .full-width-image {
       width: 100%;
       height: 300px; /* Fixed height for the image */
       object-fit: cover; /* Cover the area, cropping if necessary */
-      border-radius: 0 0 12px 12px; /* Rounded bottom corners if container is rounded */
       display: block;
     }
 
@@ -87,7 +87,10 @@
       justify-content: center; /* Center items when they wrap */
       gap: 30px; /* Space between the two contact divs */
       margin-top: 30px;
-      width: 100%; /* Ensure it takes full width of parent */
+      width: 100%; /* Ensure it takes full width */
+      max-width: 800px; /* Max width for contact boxes section */
+      padding-bottom: 30px; /* Add some space at the bottom */
+      box-sizing: border-box;
     }
 
     /* Individual contact detail div */
@@ -101,6 +104,7 @@
       max-width: 45%; /* Max width for desktop side-by-side */
       text-align: center;
       transition: transform 0.2s ease-in-out;
+      box-sizing: border-box;
     }
 
     .contact-detail-box:hover {
@@ -118,7 +122,7 @@
     .contact-detail-box p {
       font-size: 1rem;
       color: #333;
-      margin: 0;
+      margin: 0; /* Remove default paragraph margin */
     }
 
     .contact-detail-box a {
@@ -133,52 +137,44 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2rem; /* Adjust header size for mobile */
+      .full-width-image {
+        height: 250px; /* Slightly reduce image height on tablets */
       }
-
       .contact-detail-box {
         max-width: 90%; /* Full width on mobile */
       }
+      .content-wrapper {
+        width: 95%; /* More width on smaller mobile screens */
+      }
+      /* No specific padding-bottom adjustment needed for body when image is relative */
     }
 
     @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 1rem;
-      }
       .full-width-image {
-        height: 200px; /* Smaller image height on very small screens */
+        height: 180px; /* Smaller image height on very small screens */
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Logo -->
-    <img src="https://intelligentservers.co.uk/images/thumbs/0027421_intelligent%20servers%20new%20logo.png"
-         alt="Intelligent Servers logo"
-         class="logo">
+  <!-- Logo is now directly in the body -->
+  <img src="https://intelligentservers.co.uk/images/thumbs/0027421_intelligent%20servers%20new%20logo.png"
+       alt="Intelligent Servers logo"
+       class="logo">
 
+  <!-- Content wrapper to apply horizontal padding and max-width to text elements -->
+  <div class="content-wrapper">
     <!-- Header Text -->
     <h1>Thank You for Contacting Intelligent Servers!</h1>
     <p>
       We've received your inquiry and our team is already working on it.
       We appreciate your interest and will get back to you as soon as possible.
     </p>
+  </div>
 
-    <!-- Full Width Image -->
-    <div class="full-width-image-container">
-      <img src="https://placehold.co/1200x300/A0D9D9/333333?text=Thank%20You%20Page%20Image"
-           alt="Thank You Image"
-           class="full-width-image"
-           onerror="this.onerror=null;this.src='https://placehold.co/1200x300/A0D9D9/333333?text=Image%20Not%20Found';">
-    </div>
-
-    <!-- Contact Details Section -->
+  <!-- Contact Details Section - wrapped in content-wrapper for consistency -->
+  <div class="content-wrapper">
     <div class="contact-details-container">
       <!-- Email Details -->
       <div class="contact-detail-box">
@@ -194,6 +190,14 @@
         <p><a href="tel:+441423717610">+44 (0)1423 717610</a></p>
       </div>
     </div>
+  </div>
+
+  <!-- Full Width Image - now after content and flows naturally -->
+  <div class="full-width-image-container">
+    <img src="https://placehold.co/1200x300/A0D9D9/333333?text=Thank%20You%20Page%20Image"
+         alt="Thank You Image"
+         class="full-width-image"
+         onerror="this.onerror=null;this.src='https://placehold.co/1200x300/A0D9D9/333333?text=Image%20Not%20Found';">
   </div>
 
 </body>
