@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Intelligent Servers</title>
+
+  <!-- Google Fonts - Urbanist -->
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Apply Urbanist font to the entire document */
+    body {
+      font-family: 'Urbanist', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5; /* Light grey background */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Ensure page takes full viewport height */
+      align-items: center; /* Center content horizontally */
+      justify-content: center; /* Center content vertically */
+      text-align: center; /* Center text globally */
+    }
+
+    /* Container for the main content */
+    .container {
+      max-width: 1000px;
+      width: 90%; /* Responsive width */
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box; /* Include padding in width */
+    }
+
+    /* Logo styling */
+    .logo {
+      display: block;
+      margin: 0 auto 30px auto; /* Center logo with bottom margin */
+      max-width: 250px; /* Max width for the logo */
+      height: auto;
+      border-radius: 12px;
+    }
+
+    /* Header text styling */
+    h1 {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 900; /* Extra bold */
+      font-size: 3rem; /* Large font size for impact */
+      color: #333;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    /* Subheader/paragraph styling */
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      max-width: 700px; /* Constrain paragraph width */
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Full width image container */
+    .full-width-image-container {
+      width: calc(100% + 40px); /* Extend beyond container padding */
+      margin: 0 -20px 30px -20px; /* Negative margin to achieve full width */
+      overflow: hidden; /* Hide any overflow */
+    }
+
+    .full-width-image {
+      width: 100%;
+      height: 300px; /* Fixed height for the image */
+      object-fit: cover; /* Cover the area, cropping if necessary */
+      border-radius: 0 0 12px 12px; /* Rounded bottom corners if container is rounded */
+      display: block;
+    }
+
+    /* Contact details container for side-by-side layout */
+    .contact-details-container {
+      display: flex;
+      flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+      justify-content: center; /* Center items when they wrap */
+      gap: 30px; /* Space between the two contact divs */
+      margin-top: 30px;
+      width: 100%; /* Ensure it takes full width of parent */
+    }
+
+    /* Individual contact detail div */
+    .contact-detail-box {
+      background-color: #e0f7fa; /* Light teal background */
+      padding: 25px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      flex: 1; /* Allows boxes to grow and shrink */
+      min-width: 280px; /* Minimum width before wrapping */
+      max-width: 45%; /* Max width for desktop side-by-side */
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .contact-detail-box:hover {
+      transform: translateY(-5px); /* Slight lift on hover */
+    }
+
+    .contact-detail-box h3 {
+      font-family: 'Urbanist', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #00796b; /* Darker teal for heading */
+      margin-bottom: 10px;
+    }
+
+    .contact-detail-box p {
+      font-size: 1rem;
+      color: #333;
+      margin: 0;
+    }
+
+    .contact-detail-box a {
+      color: #00796b; /* Link color */
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-detail-box a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem; /* Adjust header size for mobile */
+      }
+
+      .contact-detail-box {
+        max-width: 90%; /* Full width on mobile */
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .full-width-image {
+        height: 200px; /* Smaller image height on very small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Logo -->
+    <img src="https://intelligentservers.co.uk/images/thumbs/0027421_intelligent%20servers%20new%20logo.png"
+         alt="Intelligent Servers logo"
+         class="logo">
+
+    <!-- Header Text -->
+    <h1>Thank You for Contacting Intelligent Servers!</h1>
+    <p>
+      We've received your inquiry and our team is already working on it.
+      We appreciate your interest and will get back to you as soon as possible.
+    </p>
+
+    <!-- Full Width Image -->
+    <div class="full-width-image-container">
+      <img src="https://placehold.co/1200x300/A0D9D9/333333?text=Thank%20You%20Page%20Image"
+           alt="Thank You Image"
+           class="full-width-image"
+           onerror="this.onerror=null;this.src='https://placehold.co/1200x300/A0D9D9/333333?text=Image%20Not%20Found';">
+    </div>
+
+    <!-- Contact Details Section -->
+    <div class="contact-details-container">
+      <!-- Email Details -->
+      <div class="contact-detail-box">
+        <h3>Email Us</h3>
+        <p>If you have any further questions, feel free to email us:</p>
+        <p><a href="mailto:info@intelligentservers.co.uk">info@intelligentservers.co.uk</a></p>
+      </div>
+
+      <!-- Phone Number Details -->
+      <div class="contact-detail-box">
+        <h3>Call Us</h3>
+        <p>Prefer to chat? Give us a call:</p>
+        <p><a href="tel:+441423717610">+44 (0)1423 717610</a></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
